@@ -9,7 +9,7 @@
 # 1.1 open_workbook
 from xlrd import open_workbook
 
-wb1 = open_workbook('excel-file.xlsx')
+wb1 = open_workbook('excel_file.xlsx')
 
 # 1.2 获取一个表sheet
 table1 = wb1.sheets()[0]
