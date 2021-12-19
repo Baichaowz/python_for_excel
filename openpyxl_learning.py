@@ -10,12 +10,10 @@ from openpyxl import Workbook
 
 wb = Workbook()  # 实例化工作簿
 ws = wb.active  # 激活worksheet
-
 wb.save(filename='openpyxl创建的表.xlsx')
 
 # 2.打开已存在的excel
 from openpyxl import load_workbook
-
 wb = load_workbook('openpyxl创建的表.xlsx')
 ws = wb.active  # 激活worksheet
 ws.title = 'my_sheet'  # 修改sheet名称
@@ -154,8 +152,13 @@ try:
     wb = load_workbook(addr)
 except FileNotFoundError:
     wb = Workbook()
+
+# 确定sheet
+try:
+    ws = wb['汇总']
 # 创建一张新表
-ws = wb.create_sheet('汇总')
+except KeyError:
+    ws = wb.create_sheet('汇总')
 # 第一行输入
 ws.append(['TIME', 'TITLE', 'A-Z'])
 
