@@ -145,7 +145,7 @@ from time import time
 from openpyxl import load_workbook, Workbook
 from openpyxl.utils import get_column_letter
 
-# 设置文件 mingc
+# 设置文件
 addr = "openpyxl汇总.xlsx"
 # 打开文件
 try:
